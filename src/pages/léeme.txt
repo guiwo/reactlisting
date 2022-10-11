@@ -1,0 +1,2 @@
+Aquí se guardan archivos js o jsx, componentes, que renderizan una página a la que podamos navegar.
+Las páginas son también componentes que contendrán componentes de más bajo nivel.
