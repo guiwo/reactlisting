@@ -7,16 +7,6 @@ import ModalForm from "./ModalForm";
 import Modal from "./Modal";
 import { PersonContext } from "../container/PersonList";
 
-//Status according to subscription
-
-// const active = {
-//   color: "green",
-// };
-
-// const inactive = {
-//   color: "tomato",
-// };
-
 const Person = ({ person, change, editt, removve }) => {
   //Modal edit useState
   const [showModal, setShowModal] = useState(false);
@@ -27,8 +17,6 @@ const Person = ({ person, change, editt, removve }) => {
 
   //Modal Confirm to delete useState
   const [showConfirm, setShowConfirm] = useState(false);
-  //  const handleClose = () => setShowConfirm(false);
-  //  const handleShow = () => setShowConfirm(true);
 
   const openConfirmModal = () => {
     setShowConfirm((prev) => !prev);
@@ -75,19 +63,12 @@ const Person = ({ person, change, editt, removve }) => {
   function removePersonPrev(person) {
     removve(person); //person to delete
   }
- /* const localPersonsArray = [
-    JSON.stringify(localStorage.getItem("personListLocal")),
-  ];
 
-  console.log(localPersonsArray)*/
 
   return (
     <tbody>
       <tr>
         <th scope="row">{person.id}</th>
-        {/* name, age, birthdate, phone, signupdate, subscription */}
-
-
         <td>{person.name}</td>
         <td>{person.age}</td>
         <td>{person.birthdate}</td>
