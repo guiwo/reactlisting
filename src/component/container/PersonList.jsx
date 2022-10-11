@@ -106,7 +106,7 @@ const PersonList = () => {
 
   return (
     <PersonContext.Provider value={persons}>
-      <div className="container">
+      <div className="container" style={{height: "100%"}}>
         <div className="row">
           <div className="col-3 p-4">
             <PersonFormFormik add={addPerson}></PersonFormFormik>

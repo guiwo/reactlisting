@@ -206,7 +206,9 @@ const PersonFormFormik = ({ add }) => {
                   <ErrorMessage name="subForm" component="div"></ErrorMessage>
                 )}
               </div>
-              <button type="submit">Register Account</button>
+              <div className="p-2">
+                <button type="submit">Register Account</button>
+              </div>
             </div>
           </Form>
         )}
