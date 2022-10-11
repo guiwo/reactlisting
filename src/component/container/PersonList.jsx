@@ -11,7 +11,7 @@ export const PersonContext = createContext();
 const PersonList = () => {
   const initPerson = new Persons(
     0,
-    "John Doe",
+    "John Doee",
     0,
     "Yesterday",
     "55555555555",
