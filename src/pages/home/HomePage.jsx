@@ -140,8 +140,6 @@ const HomePage = () => {
                       </div>
                     );
                   })
-                //con saveObjects, sacar la forma de mostrar este array
-                //saveObjects.map((value, index) => {   return}
               }
             </div>
           </div>
