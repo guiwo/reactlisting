@@ -19,7 +19,9 @@ const PersonList = () => {
   );
 
   //first load from the localstorage
- const [persons, setPerson] = useState(JSON.parse(localStorage.getItem("personListLocal")) || [initPerson]);
+  const [persons, setPerson] = useState(
+    JSON.parse(localStorage.getItem("personListLocal")) || [initPerson]
+  );
 
   //Will load new items that are added after the initial load
   useEffect(() => {
@@ -34,6 +36,7 @@ const PersonList = () => {
     try {
       const tempPersons = [...persons];
       tempPersons.push(person);
+      console.log("add--- persons",persons)
       setPerson(tempPersons);
     } catch (error) {
       console.error("err addPerson", error);
@@ -106,15 +109,19 @@ const PersonList = () => {
 
   return (
     <PersonContext.Provider value={persons}>
-      <div className="container" style={{height: "100%"}}>
+      <div className="container" style={{ height: "100%" }}>
         <div className="row">
           <div className="col-3 p-4">
+            <h3>Person list manager</h3>
             <PersonFormFormik add={addPerson}></PersonFormFormik>
           </div>
-          <div className="col-9 p-4">
+          <div
+            className="col-9 p-4"
+            style={{ overflowY: "auto", overflowX: "hidden", height: "100vh" }}
+          >
             <table className="table">
               <thead>
-                <tr>
+                <tr style={{backgroundColor:'azure'}}>
                   <th scope="col">No.</th>
                   <th scope="col">Name</th>
                   <th scope="col">Age</th>

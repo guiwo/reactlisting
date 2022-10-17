@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     //  add class to body element
     document.body.classList.add("d-flex", "flex-column", "h-100");
-    //document.document.classList.add("h-100");
   }, []);
 
   return (

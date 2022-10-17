@@ -64,10 +64,15 @@ const Person = ({ person, change, editt, removve }) => {
     removve(person); //person to delete
   }
 
-
   return (
     <tbody>
-      <tr>
+      <tr
+        style={
+          person.id % 2 === 0
+            ? { backgroundColor: "white" }
+            : { backgroundColor: "ghostwhite" }
+        }
+      >
         <th scope="row">{person.id}</th>
         <td>{person.name}</td>
         <td>{person.age}</td>
