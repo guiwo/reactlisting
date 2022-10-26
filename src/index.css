@@ -2,7 +2,7 @@
   height: 100vh;
 }
 
-html{
+html {
   height: 100%;
 }
 
@@ -37,6 +37,15 @@ code {
   margin-top:100vh;
 } */
 
-menu{
-  height:100vh;
+menu {
+  height: 100vh;
 }
+
+.MuiDataGrid-row:nth-child(even) {
+  background-color: ghostwhite;
+}
+
+.MuiDataGrid-row:nth-child(odd) {
+  background-color: whitesmoke;
+}
+

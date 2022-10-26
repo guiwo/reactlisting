@@ -36,7 +36,7 @@ const PersonList = () => {
     try {
       const tempPersons = [...persons];
       tempPersons.push(person);
-      console.log("add--- persons",persons)
+      console.log("add--- persons", persons);
       setPerson(tempPersons);
     } catch (error) {
       console.error("err addPerson", error);
@@ -121,7 +121,7 @@ const PersonList = () => {
           >
             <table className="table">
               <thead>
-                <tr style={{backgroundColor:'azure'}}>
+                <tr style={{ backgroundColor: "azure" }}>
                   <th scope="col">No.</th>
                   <th scope="col">Name</th>
                   <th scope="col">Age</th>

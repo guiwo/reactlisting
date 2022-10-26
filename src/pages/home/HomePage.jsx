@@ -64,9 +64,13 @@ const HomePage = () => {
   const handleChange = (event) => {
     const findItem = event.target.value;
     copy.results.filter((obj) => {
-      if (obj.name.first === findItem || obj.name.last === findItem) {
-        setFilter(obj.name.first || obj.name.last);
-        setHandleCh(obj.name.first || obj.name.last);
+      if (
+        obj.name.first === findItem ||
+        obj.name.last === findItem ||
+        obj.location.country === findItem
+      ) {
+        setFilter(obj.name.first || obj.name.last || obj.location.country);
+        setHandleCh(obj.name.first || obj.name.last || obj.location.country);
         const tempObjects = JSON.parse(localStorage.getItem("randomPerson"));
         tempObjects.push(Object.values(obj));
         localStorage.setItem("randomPerson", JSON.stringify(tempObjects));
@@ -82,13 +86,14 @@ const HomePage = () => {
   };
   return (
     <>
-      <h1>Home page</h1>
+      <h1>Random person finder</h1>
       <input
-        placeholder="Search by name/surname"
+        placeholder="Search by name/surname/country"
         type="text"
         name="searchInput"
         onChange={handleChange}
         onKeyDown={deleteInputText}
+        className={"m-2 w-25"}
       />
       {
         //if name has been found, load
@@ -135,6 +140,13 @@ const HomePage = () => {
                               Age:{" "}
                               {JSON.stringify(value[4].age).replace(/"/g, " ")}
                             </small>
+                            <span>
+                              <img
+                                alt="flag"
+                                style={{ width: "15%", float: "right" }}
+                                src={`https://countryflagsapi.com/png/${value[2].country}`}
+                              ></img>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -189,6 +201,13 @@ const HomePage = () => {
                             <small className="text-muted">
                               Age:{" "}
                               {JSON.stringify(value.dob.age).replace(/"/g, " ")}
+                              <span>
+                                <img
+                                  alt="flag"
+                                  style={{ width: "15%", float: "right" }}
+                                  src={`https://countryflagsapi.com/png/${value.location.country}`}
+                                ></img>
+                              </span>
                             </small>
                           </div>
                         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ footerText }) => {
   const date = new Date();
 
   const year = date.getFullYear();
@@ -11,7 +11,12 @@ const Footer = () => {
       style={{ backgroundColor: "red", width: "100%" }}
     >
       <div className="container" style={{ textAlign: "center" }}>
-        <span>{year}</span>
+        <span>{year} </span>
+        <span>
+          {footerText === "weatherPage" ? (
+            <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
+          ) : null}
+        </span>
       </div>
     </footer>
   );
